@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    background-color: rgb(208, 230, 230);
+}
+
+.container-geral {
+    background-color: rgb(237, 241, 241);
+    height: 100vh;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.titulo-colorido {
+    font-size: 25px;
+    font-weight: 800;
+    background: linear-gradient(to right,#f74518 ,#c60084, #4D00AF, #337dd1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.selecao {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 50px 85% 40px 85%;
+}
+
+.form-select {
+    height: 20%;
+    margin-left: 5px;
+}
+
+.container-alunos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.aluno {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 3% 30% 3% 30%;
+    margin: 15px;
+    border-radius: 10px;
+}
