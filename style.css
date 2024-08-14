@@ -51,21 +51,13 @@ body {
     margin-left: 5px;
 }
 
-.container-alunos {
+.card, .card-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-.aluno {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    padding: 3% 30% 3% 30%;
-    margin: 15px;
-    border-radius: 10px;
+.btn-primary {
+    margin: 20px;
 }
