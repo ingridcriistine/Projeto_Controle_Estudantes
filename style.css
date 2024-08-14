@@ -27,7 +27,7 @@ body {
 .titulo-colorido {
     font-size: 25px;
     font-weight: 800;
-    background: linear-gradient(to right,#f74518 ,#c60084, #4D00AF, #337dd1);
+    background: linear-gradient(to right,#f74518 ,#c60084, #4D00AF, #157ff7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -37,6 +37,20 @@ body {
     align-items: center;
     justify-content: center;
     margin: 30px;
+}
+
+.titulo a {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.titulo a:hover {
+    text-decoration: none;
+    color: black;
 }
 
 .selecao {
@@ -56,8 +70,50 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .btn-primary {
     margin: 20px;
+}
+
+.card img {
+    border-radius: 100%;
+    width: 30%;
+    
+}
+
+.card-img-top {
+    border-radius: 100%;
+}
+
+/*---------------------------------Cadastros---------------------------------------------*/
+.container-cadastro-alunos, .container-cadastro-salas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(237, 241, 241);
+    height: 100vh;
+}
+
+form h2 {
+    margin: 20px 0px 40px 0px;
+}
+
+.container-cadastro-salas form {
+    width: 18%;
+}
+
+form {
+    background-color: white;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 7%;
+}
+
+.btn-forms {
+    margin-top: 15px;
+    background-color: #337dd1;
+    color: white;
 }
