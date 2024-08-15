@@ -1,25 +1,26 @@
 body {
     margin: 0;
-    background-color: rgb(208, 230, 230);
+    background-color: rgb(237, 241, 241);
+    width: 100%;
 }
 
 .container-geral {
     background-color: rgb(237, 241, 241);
-    height: 100vh;
+    width: 100%;
 }
 
 .navbar {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .titulo {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 1%;
     font-weight: bold;
     font-size: 18px;
 }
@@ -30,6 +31,13 @@ body {
     background: linear-gradient(to right,#f74518 ,#c60084, #4D00AF, #157ff7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav {
@@ -56,13 +64,17 @@ body {
 .selecao {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    margin: 50px 85% 40px 85%;
+    margin: 2% 2% 4% 1%;
+    justify-content: end;
 }
 
 .form-select {
     height: 20%;
-    margin-left: 5px;
+    margin-left: 2%;
+}
+
+.album {
+    margin: 0 2% 0 2%;
 }
 
 .card, .card-body {
@@ -73,18 +85,28 @@ body {
     padding: 20px;
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
 .btn-primary {
     margin: 20px;
 }
 
 .card img {
     border-radius: 100%;
-    width: 30%;
+    width: 20%;
     
 }
 
 .card-img-top {
     border-radius: 100%;
+}
+
+.btn-editar {
+    background-color: rgb(122, 121, 121);
+    color: white;
 }
 
 /*---------------------------------Cadastros---------------------------------------------*/
@@ -93,15 +115,12 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: rgb(237, 241, 241);
-    height: 100vh;
+    width: 100%;
 }
 
 form h2 {
-    margin: 20px 0px 40px 0px;
-}
-
-.container-cadastro-salas form {
-    width: 18%;
+    margin: 2% 0 10% 0;
+    font-size: 25px;
 }
 
 form {
@@ -109,11 +128,25 @@ form {
     width: 30%;
     padding: 20px;
     border-radius: 10px;
-    margin: 7%;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+form img {
+    width: 20%;
+    align-self: center;
+    margin-bottom: 5%;
 }
 
 .btn-forms {
     margin-top: 15px;
     background-color: #337dd1;
     color: white;
+    width: 20%;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
 }
