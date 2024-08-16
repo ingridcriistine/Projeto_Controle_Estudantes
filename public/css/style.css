@@ -134,7 +134,6 @@ form {
 }
 
 form img {
-    width: 20%;
     align-self: center;
     margin-bottom: 5%;
 }
@@ -146,7 +145,13 @@ form img {
     width: 20%;
 }
 
-.input {
+.div-img {
     display: flex;
     justify-content: center;
+}
+
+#img-aluno {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
 }
