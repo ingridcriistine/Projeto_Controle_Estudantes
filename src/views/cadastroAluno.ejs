@@ -17,11 +17,11 @@
             <div class="titulo"><a href="index.html"><h5 class="my-0 mr-md-auto font-weight-normal"><h5 class="titulo-colorido my-0 mr-md-auto">CONTROLE</h5> de Estudantes</h5></a></div>
             <nav class="nav my-2 my-md-2 mr-md-3">
                 <b>Cadastrar: </b>
-                <a class="p-2 text-dark" href="cadastroAluno.html">Alunos</a>|
-                <a class="p-2 text-dark" href="cadastroSala.html">Sala</a>
+                <a class="p-2 text-dark" href="/cadastroAluno">Alunos</a>|
+                <a class="p-2 text-dark" href="/cadastroSala">Sala</a>
             </nav>
         </div>
-        <form class="col-md-4">
+        <form class="col-md-4" action="/cadastroAluno">
             <h2>Cadastrar um novo aluno</h2>
             <div class="div-img">
                 <img src="icon-default.png" id="img-aluno">
@@ -29,20 +29,20 @@
             </div>
 
             <div class="form-group mb-4">
-              <label for="exampleFormControlInput1">Nome</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome" required>
+              <label for="nome">Nome</label>
+              <input type="email" class="form-control" id="nome" placeholder="nome" required>
             </div>
             <div class="form-group mb-4">
-                <label for="exampleFormControlInput1">Idade</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="idade" required>
+                <label for="idade">Idade</label>
+                <input type="email" class="form-control" id="idade" placeholder="idade" required>
             </div>
             <div class="form-group mb-4">
-                <label for="exampleFormControlInput1">Sexo</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="sexo" required>
+                <label for="sexo">Sexo</label>
+                <input type="email" class="form-control" id="sexo" placeholder="sexo" required>
             </div>
             <div class="form-group mb-4">
-              <label for="exampleFormControlSelect1">Sala</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <label for="sala">Sala</label>
+              <select class="form-control" id="sala">
                 <option>TI</option>
                 <option>Manufatura</option>
                 <option>Análise de Dados</option>

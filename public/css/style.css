@@ -109,6 +109,10 @@ h2 {
     color: white;
 }
 
+.btn-editar:hover {
+    background-color: rgb(66, 66, 66);
+}
+
 /*---------------------------------Cadastros---------------------------------------------*/
 .container-cadastro-alunos, .container-cadastro-salas {
     display: flex;
