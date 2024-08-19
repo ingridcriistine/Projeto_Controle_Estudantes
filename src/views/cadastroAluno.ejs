@@ -21,28 +21,28 @@
                 <a class="p-2 text-dark" href="/cadastroSala">Sala</a>
             </nav>
         </div>
-        <form class="col-md-4" action="/cadastroAluno">
+        <form class="col-md-4" action="/cadastroAluno" method="post">
             <h2>Cadastrar um novo aluno</h2>
             <div class="div-img">
-                <img src="icon-default.png" id="img-aluno">
-                <input type="file" id="input-img" style="display: none;">
+                <img src="../imgs/icon-default.png" id="img-aluno">
+                <input type="file" id="input-img" style="display: none;" name="foto">
             </div>
 
             <div class="form-group mb-4">
               <label for="nome">Nome</label>
-              <input type="email" class="form-control" id="nome" placeholder="nome" required>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="nome" required>
             </div>
             <div class="form-group mb-4">
                 <label for="idade">Idade</label>
-                <input type="email" class="form-control" id="idade" placeholder="idade" required>
+                <input type="number" class="form-control" id="idade" name="idade" placeholder="idade" required>
             </div>
             <div class="form-group mb-4">
                 <label for="sexo">Sexo</label>
-                <input type="email" class="form-control" id="sexo" placeholder="sexo" required>
+                <input type="text" class="form-control" id="sexo" name="sexo" placeholder="sexo" required>
             </div>
             <div class="form-group mb-4">
               <label for="sala">Sala</label>
-              <select class="form-control" id="sala">
+              <select class="form-control" id="sala" name="sala">
                 <option>TI</option>
                 <option>Manufatura</option>
                 <option>Análise de Dados</option>

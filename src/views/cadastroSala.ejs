@@ -21,15 +21,15 @@
                 <a class="p-2 text-dark" href="/cadastroSala">Sala</a>
             </nav>
         </div>
-        <form class="col-md-4" action="/cadastroSala">
+        <form class="col-md-4" action="/cadastroSala" method="post">
             <h2>Cadastrar uma nova sala</h2>
             <div class="form-group mb-4">
               <label for="nome">Nome</label>
-              <input type="email" class="form-control" id="nome" placeholder="nome">
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="nome">
             </div>
             <div class="form-group mb-4">
                 <label for="capacidade">Capacidade</label>
-                <input type="email" class="form-control" id="capacidade" placeholder="capacidade">
+                <input type="number" class="form-control" id="capacidade" name="capacidade" placeholder="capacidade">
             </div>
             <button class="btn btn-forms" type="submit">CADASTRAR</button>
           </form>

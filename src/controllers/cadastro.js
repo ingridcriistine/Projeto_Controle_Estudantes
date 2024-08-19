@@ -1,6 +1,6 @@
 // Importando as tabelas do DB
 const sala = require('../model/sala');
-// const aluno = require('../model/aluno');
+const aluno = require('../model/aluno');
 
 module.exports = {
     async sala(req, res){
@@ -22,15 +22,28 @@ module.exports = {
         res.redirect('/');
     },
 
-    // async aluno(req, res){
-
-    //     // Encontrando todas as salas disponíveis no SQL
-    //     const salas = await sala.findAll({
-    //         raw: true, // Retorna somente os valores de uma tabela, sem os metadados.
-    //         attributes: ['IDSala', 'Nome']
-    //     });
+    async aluno(req, res) {
         
-    //     // Renderizando e passando o nome das salas para o front
-    //     res.render('../views/cadastroAluno', {salas});
-    // }
+        // Encontrando todas as salas disponíveis no SQL
+        const salas = await sala.findAll({
+            raw: true, // Retorna somente os valores de uma tabela, sem os metadados.
+            attributes: ['IDSala', 'Nome']
+        });
+        
+        // Renderizando e passando o nome das salas para o front
+        res.render('../views/cadastroAluno', {salas});
+    },
+
+    async alunoInsert(req, res) {
+        const dados = req.body;
+
+        await aluno.create({
+            Nome: dados.nome,
+            Idade: dados.idade,
+            Sexo: dados.sexo,
+            Foto: dados.foto           
+        });
+
+        res.redirect('/');
+    }
 }
