@@ -25,7 +25,7 @@
             <h2>Cadastrar um novo aluno</h2>
             <div class="div-img">
                 <img src="../imgs/icon-default.png" id="img-aluno">
-                <input type="file" id="input-img" style="display: none;" name="foto">
+                <input type="file" id="input-img" style="display: none;">
             </div>
 
             <div class="form-group mb-4">
@@ -42,10 +42,10 @@
             </div>
             <div class="form-group mb-4">
               <label for="sala">Sala</label>
-              <select class="form-control" id="sala" name="sala">
-                <option>TI</option>
-                <option>Manufatura</option>
-                <option>Análise de Dados</option>
+              <select class="form-control" id="sala" name="sala" required>
+                    <% for (let i=0; i< salas.length; i++) { %>
+                        <option value='<%= salas[i].Nome %>' > <%= salas[i].Nome %> </option>
+                    <% } %>
               </select>
             </div>
             <button class="btn btn-forms" type="submit">CADASTRAR</button>

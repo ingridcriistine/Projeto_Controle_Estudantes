@@ -23,7 +23,7 @@ module.exports = {
     },
 
     async aluno(req, res) {
-        
+
         // Encontrando todas as salas disponíveis no SQL
         const salas = await sala.findAll({
             raw: true, // Retorna somente os valores de uma tabela, sem os metadados.
@@ -35,15 +35,24 @@ module.exports = {
     },
 
     async alunoInsert(req, res) {
+
+        // Recebendo as informações pelo Body
         const dados = req.body;
 
+        // Nome padrão da foto
+        let foto = '../imgs/icon-default.png';
+
+        // Criando aluno no banco de dados
         await aluno.create({
             Nome: dados.nome,
             Idade: dados.idade,
             Sexo: dados.sexo,
-            Foto: dados.foto           
+            IDSala: dados.sala,
+            Foto: foto
         });
 
+        // Redirecionar para a página principal
         res.redirect('/');
     }
+    
 }
