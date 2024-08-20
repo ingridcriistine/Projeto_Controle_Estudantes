@@ -8,6 +8,10 @@ const home = require('./src/controllers/home');
 
 // Iniciando as rotas
 route.get('/', home.pagInicialGet);
+route.get('/index', home.pagInicialGet);
+
+route.post('/', home.pagInicialPost);
+route.post('/index', home.pagInicialPost);
 
 route.get('/cadastroSala', cadastro.sala);
 route.post('/cadastroSala', cadastro.salaInsert);

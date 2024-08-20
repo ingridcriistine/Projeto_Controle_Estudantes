@@ -40,7 +40,7 @@ module.exports = {
         const dados = req.body;
 
         // Nome padrão da foto
-        let foto = '../imgs/icon-default.png';
+        //let fotoPadrão = '../imgs/icon-default.png';
 
         // Criando aluno no banco de dados
         await aluno.create({
@@ -48,11 +48,11 @@ module.exports = {
             Idade: dados.idade,
             Sexo: dados.sexo,
             IDSala: dados.sala,
-            Foto: foto
+            Foto: dados.foto 
         });
 
         // Redirecionar para a página principal
         res.redirect('/');
-    }
+    },
     
 }

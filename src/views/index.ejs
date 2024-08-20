@@ -13,7 +13,7 @@
     <body class="h-100">
         <div class="container-geral">
             <div class="navbar d-flex flex-column flex-md-row align-items-center p-3 px-el-12 mb-3  shadow-lg">
-                <div class="titulo"><a href="index.html"><h5 class="my-0 mr-md-auto font-weight-normal"><h5 class="titulo-colorido my-0 mr-md-auto">CONTROLE</h5> de Estudantes</h5></a></div>
+                <div class="titulo"><a href="/index"><h5 class="my-0 mr-md-auto font-weight-normal"><h5 class="titulo-colorido my-0 mr-md-auto">CONTROLE</h5> de Estudantes</h5></a></div>
                 <nav class="nav my-2 my-md-2 mr-md-3">
                     <b>Cadastrar: </b>
                     <a class="p-2 text-dark" href="/cadastroAluno">Alunos</a>|
@@ -23,17 +23,34 @@
 
             <div class="selecao">
                 <p>Sala de Aula: </p>
-                <select class="form-select form-select-sm" aria-label="Small select example">
-                    <option selected>Selecionar</option>
-                    <option value="1">TI</option>
-                    <option value="2">Manufatura</option>
-                    <option value="3">Análise de Dados</option>
+                <select class="form-select form-select-sm" aria-label="Small select example" id="sala" onchange="this.form.submit()" name="nome">
+                    <option>Selecionar</option>
+                    <% for (let i=0; i< salas.length; i++) { %>
+                      <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
+                    <% } %>
                 </select>
             </div>
             
             <h2>Alunos</h2>
             <div class="album py-5 cards">
+              <% for (let i=0; i<alunos.length; i++) { %>
                 <div class="row">
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <img class="card-img-top" alt="Foto aluno" src="img/<%= alunos[i].Foto %>">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= alunos[i].Nome %></h5>
+                        <p class="card-text">Idade: <%= alunos[i].Idade %></p>
+                        <form action="/editarAluno/<%= alunos[i].IDAluno %>" method="get">
+                          <button class="btn btn-editar" type="submit">Editar</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% } %>
+
+                <!-- <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                       <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="imgs/ingrid.png" data-holder-rendered="true">
@@ -83,8 +100,8 @@
                       </div>
                       <button class="btn btn-editar" type="submit">Editar</button>
                     </div>
-                  </div>
-            </div>
+                  </div> -->
+            <!-- </div> -->
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

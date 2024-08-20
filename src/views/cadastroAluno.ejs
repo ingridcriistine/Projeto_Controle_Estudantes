@@ -14,18 +14,18 @@
 <body>
     <div class="container-cadastro-alunos ">
         <div class="navbar d-flex flex-column flex-md-row align-items-center p-3 px-el-12 mb-3  shadow-lg">
-            <div class="titulo"><a href="index.html"><h5 class="my-0 mr-md-auto font-weight-normal"><h5 class="titulo-colorido my-0 mr-md-auto">CONTROLE</h5> de Estudantes</h5></a></div>
+            <div class="titulo"><a href="/index"><h5 class="my-0 mr-md-auto font-weight-normal"><h5 class="titulo-colorido my-0 mr-md-auto">CONTROLE</h5> de Estudantes</h5></a></div>
             <nav class="nav my-2 my-md-2 mr-md-3">
                 <b>Cadastrar: </b>
                 <a class="p-2 text-dark" href="/cadastroAluno">Alunos</a>|
                 <a class="p-2 text-dark" href="/cadastroSala">Sala</a>
             </nav>
         </div>
-        <form class="col-md-4" action="/cadastroAluno" method="post">
+        <form class="col-md-4" action="/cadastroAluno" method="post" enctype="multipart/form-data">
             <h2>Cadastrar um novo aluno</h2>
             <div class="div-img">
-                <img src="../imgs/icon-default.png" id="img-aluno">
-                <input type="file" id="input-img" style="display: none;">
+                <img src="../imgs/icon-default.png" id="img-aluno" accept="image/*">
+                <input type="file" id="input-img" name="foto" style="display: none;">
             </div>
 
             <div class="form-group mb-4">
@@ -44,7 +44,7 @@
               <label for="sala">Sala</label>
               <select class="form-control" id="sala" name="sala" required>
                     <% for (let i=0; i< salas.length; i++) { %>
-                        <option value='<%= salas[i].Nome %>' > <%= salas[i].Nome %> </option>
+                        <option value='<%= salas[i].IDSala %>' > <%= salas[i].Nome %> </option>
                     <% } %>
               </select>
             </div>

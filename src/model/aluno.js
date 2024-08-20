@@ -27,7 +27,7 @@ const aluno = database.define('Aluno', {
 
     Foto: {
         type: Sequelize.STRING(50),
-        allowNull: true
+        allowNull: false
     }
         
 });
