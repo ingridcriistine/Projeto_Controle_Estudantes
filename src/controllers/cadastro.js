@@ -39,6 +39,8 @@ module.exports = {
         // Recebendo as informações pelo Body
         const dados = req.body;
 
+        console.log(req.body);
+
         // Nome padrão da foto
         //let fotoPadrão = '../imgs/icon-default.png';
 

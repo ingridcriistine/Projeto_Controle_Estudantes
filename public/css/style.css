@@ -63,18 +63,30 @@ body {
 
 .selecao {
     display: flex;
-    flex-direction: row;
-    margin: 2% 2% 4% 1%;
     justify-content: end;
 }
 
+.selecao form {
+    display: flex;
+    flex-direction: row;
+    margin: 2% 2% 4% 1%;
+}
+
+.selecao p {
+    width: 100px;
+}
+
 .form-select {
-    height: 20%;
+    width: 200px;
+    height: 60%;
     margin-left: 2%;
+    font-size: 15px;
 }
 
 .album {
     margin: 0 2% 0 2%;
+    display: flex;
+    flex-direction: row;
 }
 
 .card, .card-body {
@@ -122,12 +134,12 @@ h2 {
     width: 100%;
 }
 
-form h2 {
+.container-cadastro-alunos form h2, .container-cadastro-salas form h2 {
     margin: 2% 0 10% 0;
     font-size: 25px;
 }
 
-form {
+.container-cadastro-alunos form, .container-cadastro-salas form {
     background-color: white;
     width: 30%;
     padding: 20px;
@@ -137,7 +149,7 @@ form {
     flex-direction: column;
 }
 
-form img {
+.container-cadastro-alunos form img, .container-cadastro-salas form img {
     align-self: center;
     margin-bottom: 5%;
 }

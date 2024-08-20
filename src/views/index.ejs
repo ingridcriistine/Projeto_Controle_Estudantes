@@ -22,19 +22,21 @@
             </div>
 
             <div class="selecao">
+              <form method="post" action="/">
                 <p>Sala de Aula: </p>
-                <select class="form-select form-select-sm" aria-label="Small select example" id="sala" onchange="this.form.submit()" name="nome">
-                    <option>Selecionar</option>
-                    <% for (let i=0; i< salas.length; i++) { %>
-                      <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
-                    <% } %>
-                </select>
+                  <select class="form-select form-select-sm" aria-label="Small select example" id="sala" onchange="this.form.submit()" name="nome">
+                      <option hidden>Selecionar</option>
+                      <% for (let i=0; i< salas.length; i++) { %>
+                        <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
+                      <% } %>
+                  </select>
+                </form>
             </div>
             
             <h2>Alunos</h2>
             <div class="album py-5 cards">
-              <% for (let i=0; i<alunos.length; i++) { %>
-                <div class="row">
+              <div class="row">
+                  <% for (let i=0; i<alunos.length; i++) { %>
                   <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                       <img class="card-img-top" alt="Foto aluno" src="img/<%= alunos[i].Foto %>">
@@ -47,9 +49,9 @@
                       </div>
                     </div>
                   </div>
+                  <% } %>
                 </div>
-                <% } %>
-
+                  
                 <!-- <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
