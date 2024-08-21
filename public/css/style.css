@@ -70,15 +70,26 @@ body {
     display: flex;
     flex-direction: row;
     margin: 2% 2% 4% 1%;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-editar-sala:hover {
+    color: rgb(114, 114, 114);
 }
 
 .selecao p {
     width: 100px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .form-select {
     width: 200px;
-    height: 60%;
+    height: 50%;
     margin-left: 2%;
     font-size: 15px;
 }

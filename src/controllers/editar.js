@@ -8,6 +8,8 @@ module.exports = {
     
         // Recebendo o id da URL
         const parametro = req.params.id;
+
+        console.log(parametro);
     
         const alunos = await aluno.findByPk(parametro, {
             raw: true, //Retorna os somente os valores de uma tabela, sem os metadados
@@ -35,7 +37,7 @@ module.exports = {
             });
 
             // Excluindo a foto da pasta
-            if (antigaFoto[0].Foto != '../imgs/icon-default.png') fs.unlink(`public/imgs/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
+            if (antigaFoto[0].Foto != '/icon-default.png') fs.unlink(`public/imgs/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
             
             // Update da nova foto no DB
             await aluno.update(
@@ -54,6 +56,8 @@ module.exports = {
         {
             where: { IDAluno: id }
         });
+
+        console.log(dados);
 
         res.redirect('/');
     }
