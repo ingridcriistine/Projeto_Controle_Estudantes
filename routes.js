@@ -1,10 +1,11 @@
 // Iniciando Route do Express
 const express = require('express');
 const route = express.Router();
-const cadastro = require('./src/controllers/cadastro');
 
 // Importando os Controllers
 const home = require('./src/controllers/home');
+const cadastro = require('./src/controllers/cadastro');
+const editar = require('./src/controllers/editar');
 
 // Iniciando Multer
 const multer = require("multer");
@@ -23,10 +24,10 @@ route.post('/index', home.pagInicialPost);
 route.get('/cadastroSala', cadastro.sala);
 route.post('/cadastroSala', cadastro.salaInsert);
 
-route.get('/cadastroAluno', cadastro.aluno);
-route.post('/cadastroAluno', cadastro.alunoInsert);
-
 // Cadastro de aluno irá receber um arquivo com o "name" do HTML chamado de "foto"
 route.post('/cadastroAluno', multer(config).single('foto'), cadastro.alunoInsert);
+
+route.get('/editarAluno/:id', editar.alunos);
+route.post('/editarAluno/:id', multer(config).single('foto'), editar.adicionar);
 
 module.exports = route;

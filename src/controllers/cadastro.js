@@ -41,14 +41,14 @@ module.exports = {
 
         console.log(req.body);
 
-        // Nome padrão da foto
+         // Nome padrão da foto
         let foto = '../imgs/icon-default.png';
 
         // Verificando se foi enviada alguma foto
         if (req.file) {
-        // Pegar novo nome da foto
-        foto = req.file.filename;
-}
+            // Pegar novo nome da foto
+            foto = req.file.filename;
+        }
 
         // Criando aluno no banco de dados
         await aluno.create({
@@ -61,6 +61,6 @@ module.exports = {
 
         // Redirecionar para a página principal
         res.redirect('/');
-    },
+    }
     
 }

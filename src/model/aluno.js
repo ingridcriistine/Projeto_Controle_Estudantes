@@ -6,28 +6,28 @@ const aluno = database.define('Aluno', {
     IDAluno: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        allowNull: false,
+        allowNull: true,
         primaryKey: true
     },
 
     Nome: {
         type: Sequelize.STRING(100),
-        allowNull: false
+        allowNull: true
     },
 
     Idade: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: true
     },
 
     Sexo: {
         type: Sequelize.STRING(20),
-        allowNull: false
+        allowNull: true
     },
 
     Foto: {
         type: Sequelize.STRING(50),
-        allowNull: false
+        allowNull: true
     }
         
 });

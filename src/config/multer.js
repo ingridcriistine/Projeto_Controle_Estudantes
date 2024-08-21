@@ -6,7 +6,7 @@ const multerConfig = multer.diskStorage({
 
     // Criar destino de armazenamento
     destination: (req, file, cb) => {
-        cb(null, 'public/img'); // (Caso de erro, Local de destino)
+        cb(null, 'public/imgs'); // (Caso de erro, Local de destino)
     },
 
     // Renomear arquivo
