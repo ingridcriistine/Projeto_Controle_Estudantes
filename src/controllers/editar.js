@@ -75,7 +75,7 @@ module.exports = {
     
         const salaAtual = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
     
-        res.render('../views/editarSala', {salas, salaAtual});
+        res.render('../views/editarSala', {salas});
     },
 
     async adicionarSala(req, res){

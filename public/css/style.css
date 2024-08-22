@@ -182,3 +182,9 @@ h2 {
     height: 120px;
     border-radius: 100%;
 }
+
+.btn-editar-salas {
+    color: black;
+    text-decoration: underline;
+    font-size: 15px;
+}

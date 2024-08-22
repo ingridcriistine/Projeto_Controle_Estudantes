@@ -21,9 +21,6 @@ route.get('/index', home.pagInicialGet);
 route.post('/', home.pagInicialPost);
 route.post('/index', home.pagInicialPost);
 
-route.get('/', home.pagEditar);
-route.get('/index', home.pagEditar);
-
 route.get('/cadastroSala', cadastro.sala);
 route.post('/cadastroSala', cadastro.salaInsert);
 

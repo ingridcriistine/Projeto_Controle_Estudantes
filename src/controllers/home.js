@@ -29,17 +29,5 @@ module.exports = {
         });
 
         res.render('../views/index', {salas, alunos, id});
-    },
-
-    async pagEditar(req, res){
-
-        const id = req.body.nome;
-        const salaAtual = await salaAtual.findAll({
-            raw: true,
-            attributes: ['IDSala', 'Nome'],
-            where: {IDSala: id}
-        });
-
-        res.render('../views/editarSala', {salaAtual, id});
-    },
+    }
 }

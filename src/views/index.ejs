@@ -28,14 +28,9 @@
                       <option hidden>Selecionar</option>
                       <% for (let i=0; i< salas.length; i++) { %>
                         <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
-                      <% } %>
-                  </select>
-
-                  <% for (let i = 0; i < salas.length; i++) { %>
-                    <form action="/editarSala/<%= salas[i].IDSala %>" method="get">
-                      <button class="btn btn-editar" type="submit">Editar sala</button>
-                    </form>
-                  <% } %>
+                      <% } %>    
+                    </select>
+                    <a href="/editarSala/<%= id %>" class="btn btn-editar-salas" <%=!id? 'hidden' : ''%>>Editar sala</a> 
               </form>
             </div>
             
