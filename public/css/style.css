@@ -63,7 +63,12 @@ body {
 
 .selecao {
     display: flex;
-    justify-content: end;
+    justify-content: space-between
+}
+
+.selecao h5 {
+    margin: 2% 2% 4% 2%;
+    font-size: 20px;
 }
 
 .selecao form {
