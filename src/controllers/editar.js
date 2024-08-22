@@ -61,5 +61,39 @@ module.exports = {
         console.log(dados);
 
         res.redirect('/');
+    },
+
+    async salas(req, res){
+    
+        // Recebendo o id da URL
+        const parametro = req.params.id;
+    
+        const salas = await sala.findByPk(parametro, {
+            raw: true, //Retorna os somente os valores de uma tabela, sem os metadados
+            attributes: ['IDSala', 'Nome', 'Capacidade']
+        });
+    
+        const salaAtual = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
+    
+        res.render('../views/editarSala', {salas, salaAtual});
+    },
+
+    async adicionarSala(req, res){
+
+        const dados = req.body;
+        const id = req.params.id;
+
+        // Dando upgrade nas novas informações
+        await sala.update({
+            Nome: dados.nome,
+            Capacidade: dados.capacidade
+        },
+        {
+            where: { IDSala: id }
+        });
+
+        console.log(dados);
+
+        res.redirect('/');
     }
 }

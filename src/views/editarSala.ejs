@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Ingrid">
+        <title>Editar | Sala</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/script.js" defer></script>
+    </head>
+
+    <body class="h-100">
+        <div class="container-cadastro-salas">
+            <div class="navbar d-flex wh-100 flex-column flex-md-row align-items-center p-3 px-el-12 mb-3  shadow-lg">
+                <div class="titulo"><a href="/index"><h5 class="my-0 mr-md-auto font-weight-normal"><h5 class="titulo-colorido my-0 mr-md-auto">CONTROLE</h5> de Estudantes</h5></a></div>
+                <nav class="nav my-2 my-md-2 mr-md-3">
+                    <b>Cadastrar: </b>
+                    <a class="p-2 text-dark" href="/cadastroAluno">Alunos</a>|
+                    <a class="p-2 text-dark" href="/cadastroSala">Sala</a>
+                </nav>
+            </div>
+            <form class="col-md-4" action="/editarSala/<%= salas.IDSala %>" method="post">
+                <h2>Editar sala</h2>
+                <div class="form-group mb-4">
+                  <label for="nome">Nome</label>
+                  <input type="text" class="form-control" value="<%= salas.Nome %>" id="nome" name="nome" placeholder="nome">
+                </div>
+                <div class="form-group mb-4">
+                    <label for="capacidade">Capacidade</label>
+                    <input type="number" class="form-control" value="<%= salas.Capacidade %>"" id="capacidade" name="capacidade" placeholder="capacidade">
+                </div>
+                <button class="btn btn-forms" type="submit">ATUALIZAR</button>
+              </form>
+        </div>
+    
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

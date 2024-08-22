@@ -21,6 +21,9 @@ route.get('/index', home.pagInicialGet);
 route.post('/', home.pagInicialPost);
 route.post('/index', home.pagInicialPost);
 
+route.get('/', home.pagEditar);
+route.get('/index', home.pagEditar);
+
 route.get('/cadastroSala', cadastro.sala);
 route.post('/cadastroSala', cadastro.salaInsert);
 
@@ -30,5 +33,8 @@ route.get('/cadastroAluno', cadastro.aluno);
 
 route.get('/editarAluno/:id', editar.alunos);
 route.post('/editarAluno/:id', multer(config).single('foto'), editar.adicionar);
+
+route.get('/editarSala/:id', editar.salas);
+route.post('/editarSala/:id', editar.adicionarSala);
 
 module.exports = route;

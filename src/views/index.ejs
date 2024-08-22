@@ -30,7 +30,12 @@
                         <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
                       <% } %>
                   </select>
-                  <button class="btn btn-editar-sala" type="submit" href="/editarSala">Editar sala</button>
+
+                  <% for (let i = 0; i < salas.length; i++) { %>
+                    <form action="/editarSala/<%= salas[i].IDSala %>" method="get">
+                      <button class="btn btn-editar" type="submit">Editar sala</button>
+                    </form>
+                  <% } %>
               </form>
             </div>
             
