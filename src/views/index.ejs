@@ -22,18 +22,33 @@
             </div>
 
             <div class="selecao">
-              <h5>Qtd de alunos: 4/20</h5>
+                <p>Vagas: 
+                  <% if (id) { %>
+                    <% for (let i=0; i< salas.length; i++) { %>
+                      <% if (salas[i].IDSala == id) { %>  
+                        <% for (let j = 0; j < alunos.length; j++) { %>
+                          <% if (j+1 == alunos.length) { %> 
+                            <%= j+1 %> / <%= salas[i].Capacidade %>
+                          <% } %>                  
+                        <% } %>    
+                      <% } %>                  
+                    <% } %>    
+                  <% } %>
+                </p>
+
               <form method="post" action="/">
                 <p>Sala de Aula: </p>
-                  <select class="form-select form-select-sm" aria-label="Small select example" id="sala" onchange="this.form.submit()" name="nome">
-                      <option hidden>Selecionar</option>
-                      <% for (let i=0; i< salas.length; i++) { %>
-                        <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
-                      <% } %>    
-                    </select>
-                    <a href="/editarSala/<%= id %>" class="btn btn-editar-salas" <%=!id? 'hidden' : ''%>>Editar sala</a> 
-              </form>
+                <select class="form-select form-select-sm" aria-label="Small select example" id="sala" onchange="this.form.submit()" name="nome">
+                  <option hidden>Selecionar</option>
+                  <% for (let i=0; i< salas.length; i++) { %>
+                    <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
+                    <% } %>    
+                  </select>
+                  <a href="/editarSala/<%= id %>" class="btn btn-editar-salas" <%=!id? 'hidden' : ''%>>Editar sala</a> 
+                </form>  
             </div>
+
+              
             
             <h2>Alunos</h2>
             <div class="album py-5 cards">

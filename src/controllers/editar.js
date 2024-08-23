@@ -73,7 +73,7 @@ module.exports = {
             attributes: ['IDSala', 'Nome', 'Capacidade']
         });
     
-        const salaAtual = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
+        const salaAtual = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome', 'Capacidade'] });
     
         res.render('../views/editarSala', {salas});
     },

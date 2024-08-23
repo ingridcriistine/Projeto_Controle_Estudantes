@@ -63,7 +63,12 @@ body {
 
 .selecao {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selecao p {
+    margin-left: 3%;
 }
 
 .selecao h5 {
@@ -74,7 +79,7 @@ body {
 .selecao form {
     display: flex;
     flex-direction: row;
-    margin: 2% 2% 4% 1%;
+    margin: 2% 2% 2% 1%;
     align-items: center;
     justify-content: center;
 }

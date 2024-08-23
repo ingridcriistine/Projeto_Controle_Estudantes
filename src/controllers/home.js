@@ -8,7 +8,7 @@ module.exports = {
 
         const salas = await sala.findAll({
             raw: true,
-            attributes: ['IDSala', 'Nome']
+            attributes: ['IDSala', 'Nome', 'Capacidade']
         });
 
         res.render('../views/index', {salas, alunos: '', id: ''});
@@ -25,7 +25,7 @@ module.exports = {
         });
 
         const salas = await sala.findAll({ 
-            raw: true, attributes: ['IDSala', 'Nome'] 
+            raw: true, attributes: ['IDSala', 'Nome', 'Capacidade'] 
         });
 
         res.render('../views/index', {salas, alunos, id});
