@@ -198,3 +198,20 @@ h2 {
     text-decoration: underline;
     font-size: 15px;
 }
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-forms:hover {
+    background-color: #4890e2;
+}
+
+.btn-del {
+    background-color: #971e00;
+}
+
+.btn-del:hover {
+    background-color: #c22802;
+}

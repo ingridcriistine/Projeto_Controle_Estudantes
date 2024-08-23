@@ -27,6 +27,23 @@ module.exports = {
         const dados = req.body;
         const id = req.params.id;
 
+        // Excluindo aluno
+        if (dados.envio == 'Excluir') {
+
+            // Recebendo a antiga foto do aluno
+            const antigaFoto = await aluno.findAll({
+                raw: true,
+                attributes: ['Foto'],
+                where: { IDAluno: id }
+            });
+
+            if (antigaFoto[0].Foto != 'icon-default.png') fs.unlink(`public/imgs/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
+
+            await aluno.destroy({ where: { IDAluno: id } });
+            res.redirect('/');
+            return;
+        }
+
         // Se foi enviado alguma foto
         if (req.file) {
 
@@ -38,7 +55,7 @@ module.exports = {
             });
 
             // Excluindo a foto da pasta
-            if (antigaFoto[0].Foto != '/icon-default.png') fs.unlink(`public/imgs/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
+            if (antigaFoto[0].Foto != 'icon-default.png') fs.unlink(`public/imgs/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
             
             // Update da nova foto no DB
             await aluno.update(
@@ -82,6 +99,30 @@ module.exports = {
 
         const dados = req.body;
         const id = req.params.id;
+
+        // Excluindo aluno
+        if (dados.envio == 'Excluir') {
+
+            // Encontrando todas as salas disponíveis no SQL
+            const alunos = await aluno.findAll({ raw: true, attributes: ['IDAluno', 'Foto'], where: { IDSala: id } });
+
+            // Excluindo Alunos
+            for (let i=0; i<alunos.length; i++) {
+                
+                const antigaFoto = await aluno.findAll({ 
+                    raw: true, attributes: ['Foto'], 
+                    where: { IDAluno: alunos[i].IDAluno } 
+                });
+                
+                if (antigaFoto[0].Foto != 'icon-default.png') fs.unlink(`public/imgs/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
+                await aluno.destroy({ where: { IDAluno: alunos[i].IDAluno } });
+            }
+
+            await sala.destroy({ where: { IDSala: id } });
+
+            res.redirect('/');
+            return;
+        }
 
         // Dando upgrade nas novas informações
         await sala.update({
